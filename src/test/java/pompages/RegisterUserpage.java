@@ -46,20 +46,16 @@ public class RegisterUserpage {
     @FindBy(xpath = "//select[@id = 'days']//option[@value = '6']")
     private WebElement calender_days ;
     
-  //select[@id='months']//option[contains(text(),'June')]
     @FindBy(xpath = "//select[@id='months']//option[contains(text(),'June')]")
     private WebElement  calender_month;
     		
     
-  //select[@id='years']//option[contains(text(),'2018')]
     @FindBy(xpath = "//select[@id='years']//option[contains(text(),'2018')]")
     private WebElement  calender_years;
     
-   // newsletter
     @FindBy(xpath = "//input[@id='newsletter']")
     private WebElement sign_up_newslatter;
     
-   // optin
     @FindBy(xpath = "//input[@id='optin']")
     private WebElement special_offers;
     
@@ -75,7 +71,6 @@ public class RegisterUserpage {
     @FindBy(xpath = "//input[@id='company']")
     private WebElement  company;
     
-  //input[@id='address1']
     @FindBy(xpath = "//input[@id='address1']")
     private WebElement  address1;
     
@@ -83,15 +78,12 @@ public class RegisterUserpage {
     @FindBy(xpath = "//input[@id='address2']")
     private WebElement  address2;
     
-  //select[@id='country']//option[contains(text(),'Australia')]
     @FindBy(xpath = "//select[@data-qa = 'country']//option[contains(.,'India')]")
     private WebElement country; 
     
-  //input[@id='state']
     @FindBy(xpath = "//input[@id='state']")
     private WebElement state; 
     
-  //input[@id='city']
     @FindBy(xpath = "//input[@id='city']")
     private WebElement city;
     
@@ -99,15 +91,12 @@ public class RegisterUserpage {
     @FindBy(xpath = "//input[@id='mobile_number']")
     private WebElement mobile_number;
     
-  //button[normalize-space()='Create Account']
     @FindBy(xpath = "//button[normalize-space()='Create Account']")
     private WebElement create_account;
     
-  //b[normalize-space()='Account Created!']
     @FindBy(xpath = "//b[normalize-space()='Account Created!']")
     private WebElement account_created;
     
-  //a[contains(text(),'Continue')]
     @FindBy(xpath = "//a[contains(text(),'Continue')]")
     private WebElement continue_signup;
     
@@ -118,7 +107,6 @@ public class RegisterUserpage {
     @FindBy(xpath = "//input[@id='zipcode']")
     private WebElement zipcode;
     
-  //b[contains(text(),'Account Deleted!')]
     @FindBy(xpath = "//b[contains(text(),'Account Deleted!')]")
     private WebElement account_deleted;
     

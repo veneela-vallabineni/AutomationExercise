@@ -8,37 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class RegisterUserpage {
 	
 	
-
-	
-//		//declaration
-//		@FindBy(id="username")
-//		private WebElement unTB;
-//		
-//		@FindBy(name="pwd")
-//		private WebElement pwTB;
-//		
-//		@FindBy(xpath="//div[.='Login ']")
-//		private WebElement loginBtn;
-//		
-//		
-//		//initialisation
-//		public LoginPage(WebDriver driver){
-//			PageFactory.initElements(driver, this);
-//		}
-//		
-//		
-//		
-//		//Utilisation
-//		public void setUsername(String un){
-//			unTB.sendKeys(un);
-//		}
-//		public void setPassword(String pw){
-//			pwTB.sendKeys(pw);
-//		}
-//		public void clickLogin(){
-//			loginBtn.click();
-//		}
-//	}
+//declaration
 
     @FindBy(xpath = "//img[@alt='Website for automation practice']")
     private  WebElement logo;
@@ -77,48 +47,92 @@ public class RegisterUserpage {
     private WebElement calender_days ;
     
   //select[@id='months']//option[contains(text(),'June')]
+    @FindBy(xpath = "//select[@id='months']//option[contains(text(),'June')]")
+    private WebElement  calender_month;
+    		
     
   //select[@id='years']//option[contains(text(),'2018')]
-    
+    @FindBy(xpath = "//select[@id='years']//option[contains(text(),'2018')]")
+    private WebElement  calender_years;
     
    // newsletter
+    @FindBy(xpath = "//input[@id='newsletter']")
+    private WebElement sign_up_newslatter;
     
    // optin
-    
-  //input[@id='first_name']
-    
-  //input[@id='last_name']
-    
-  //input[@id='company']
-    
-  //input[@id='address1']
-    
-  //input[@id='address2']
-    
-  //select[@id='country']//option[contains(text(),'Australia')]
-    
-  //input[@id='state']
-    
-  //input[@id='city']
-    
-  //input[@id='mobile_number']
-    
-  //button[normalize-space()='Create Account']
-    
-  //b[normalize-space()='Account Created!']
-    
-  //a[contains(text(),'Continue')]
-    
-  //li[contains(.,'Logged in as vineela')]
+    @FindBy(xpath = "//input[@id='optin']")
+    private WebElement special_offers;
     
   
+    @FindBy(xpath = "//input[@id='first_name']")
+    private WebElement first_name;
     
+  
+    @FindBy(xpath = "//input[@id='last_name']")
+    private WebElement last_name;
     
+  
+    @FindBy(xpath = "//input[@id='company']")
+    private WebElement  company;
+    
+  //input[@id='address1']
+    @FindBy(xpath = "//input[@id='address1']")
+    private WebElement  address1;
+    
+ 
+    @FindBy(xpath = "//input[@id='address2']")
+    private WebElement  address2;
+    
+  //select[@id='country']//option[contains(text(),'Australia')]
+    @FindBy(xpath = "//select[@data-qa = 'country']//option[contains(.,'India')]")
+    private WebElement country; 
+    
+  //input[@id='state']
+    @FindBy(xpath = "//input[@id='state']")
+    private WebElement state; 
+    
+  //input[@id='city']
+    @FindBy(xpath = "//input[@id='city']")
+    private WebElement city;
+    
+  
+    @FindBy(xpath = "//input[@id='mobile_number']")
+    private WebElement mobile_number;
+    
+  //button[normalize-space()='Create Account']
+    @FindBy(xpath = "//button[normalize-space()='Create Account']")
+    private WebElement create_account;
+    
+  //b[normalize-space()='Account Created!']
+    @FindBy(xpath = "//b[normalize-space()='Account Created!']")
+    private WebElement account_created;
+    
+  //a[contains(text(),'Continue')]
+    @FindBy(xpath = "//a[contains(text(),'Continue')]")
+    private WebElement continue_signup;
+    
+  
+    @FindBy(xpath = "//li[contains(.,'Logged in as')]")
+    private WebElement Loggeed_in_as_user;
+    
+    @FindBy(xpath = "//input[@id='zipcode']")
+    private WebElement zipcode;
+    
+  //b[contains(text(),'Account Deleted!')]
+    @FindBy(xpath = "//b[contains(text(),'Account Deleted!')]")
+    private WebElement account_deleted;
+    
+ 
+    @FindBy(xpath = " //a[@href='/delete_account']")
+    private WebElement  delete_account; 
+  
+    
+ //initialization   
     public RegisterUserpage(WebDriver driver) {
     	PageFactory.initElements(driver, this);
     }
     
-    
+  //Utilization   
     public void HomePageVisible()
     {
     	System.out.println(logo.isDisplayed());
@@ -173,15 +187,110 @@ public class RegisterUserpage {
     }
     
     
-    public void CalenderDaysSelection()
+    public void CalenderSelection()
     {
     	calender_days.click();
+    	calender_month.click();
+    	calender_years.click();
+    	
     }
     
- 
+    public void sign_up_newslatter()
+    {
+    	sign_up_newslatter.click();
+    }
+    
+    public void recive_special_offers()
+    {
+    	special_offers.click();
+    }
+    
+    public void address_info_first_name(String name){
+    	
+    	first_name.sendKeys(name);
+    }
+    
+    public void address_info_last_name(String name) {
+    	
+    last_name.sendKeys(name);
+    }
+    
+    public void company(String name) {
+    	
+    company.sendKeys(name);
+    }
     
     
+    public void address1(String name) {
+    	
+    address1.sendKeys(name);
+    }
     
+    
+    public void address2(String name) {
+    	
+    	address2.sendKeys(name);
+    }
+    
+    public void country() {
+    	
+    country.click();
+    }
+    
+    public void state(String name) {
+    	
+    state.sendKeys(name);
+    }
+    
+    public void city(String name) {
+    	
+    	city.sendKeys(name);
+    }
+    
+    public void Zipcode(String number) {
+    	zipcode.sendKeys(number);
+    	
+    }
+    
+    public void mobilenumber(String number) {
+    	mobile_number.sendKeys(number);
+    }
+    
+    public void create_Account() {
+    	create_account.click();
+    }
+    
+    public void account_created()
+    {
+  System.out.println(account_created.isDisplayed()+"account created is displayed or not");  	
+    }
+    
+    
+    public void continue_signup()
+    {
+    	
+    continue_signup.click();
+    }
+    
+    public void logged_in_user() {
+    	
+    System.out.println(Loggeed_in_as_user.isDisplayed()+"logged in as user");
+    }
+    
+    public void delete_account()
+    {
+    	delete_account.click();
+    }
+    
+    public void account_deleted()
+    {
+    	
+    	System.out.println("account is deleted"+account_deleted.isDisplayed());
+    }
+    
+    public void contine_with_other_activity() {
+    	continue_signup.click();
+    }
     
 
 }

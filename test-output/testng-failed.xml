@@ -7,6 +7,7 @@
         <methods>
           <include name="closeApllication"/>
           <include name="userRegistration"/>
+          <include name="openApplication"/>
         </methods>
       </class> <!-- Scripts.RegisterUser -->
     </classes>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-05-07T22:19:26 IST" name="Demo_suite" finished-at="2024-05-07T22:19:54 IST" duration-ms="28057">
+    <groups>
+    </groups>
+    <test started-at="2024-05-07T22:19:26 IST" name="Login_test" finished-at="2024-05-07T22:19:54 IST" duration-ms="28057">
+      <class name="Scripts.RegisterUser">
+        <test-method is-config="true" signature="openApplication()[pri:0, instance:Scripts.RegisterUser@65fb9ffc]" started-at="2024-05-07T22:19:26 IST" name="openApplication" finished-at="2024-05-07T22:19:31 IST" duration-ms="5038" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openApplication -->
+        <test-method signature="userRegistration()[pri:0, instance:Scripts.RegisterUser@65fb9ffc]" started-at="2024-05-07T22:19:31 IST" name="userRegistration" finished-at="2024-05-07T22:19:54 IST" duration-ms="22775" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userRegistration -->
+        <test-method is-config="true" signature="closeApllication()[pri:0, instance:Scripts.RegisterUser@65fb9ffc]" started-at="2024-05-07T22:19:54 IST" name="closeApllication" finished-at="2024-05-07T22:19:54 IST" duration-ms="199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApllication -->
+      </class> <!-- Scripts.RegisterUser -->
+    </test> <!-- Login_test -->
+  </suite> <!-- Demo_suite -->
+</testng-results>

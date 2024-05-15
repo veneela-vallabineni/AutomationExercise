@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Demo_suite">
-  <test  name="Login_test">
+<suite name="Demo_suite" data-provider-thread-count="1" >
+	<listeners>
+		<listener class-name="generics.ItestListeners"></listener>
+	</listeners>
+	<parameter name="browser" value="chrome"></parameter>
+	
+  <test  name="Login_test" group-by-instances="true" >
     <classes>
-      <class name="Scripts.RegisterUser"/>
+      <class name="generics.Data_Class">
+		
+	  </class> 
     </classes>
   </test> <!-- Test -->
-</suite> <!-- Suite -->
+	</suite> <!-- Suite -->

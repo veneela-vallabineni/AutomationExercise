@@ -1,5 +1,7 @@
 package pompages;
 
+import static org.testng.Assert.*;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -115,15 +117,15 @@ public class RegisterUserpage {
     private WebElement  delete_account; 
   
     
- //initialization   
+  
     public RegisterUserpage(WebDriver driver) {
     	PageFactory.initElements(driver, this);
     }
     
-  //Utilization   
+ 
     public void HomePageVisible()
     {
-    	System.out.println(logo.isDisplayed());
+    	assertTrue(logo.isDisplayed());
     }
     
     
@@ -135,7 +137,7 @@ public class RegisterUserpage {
     public void NewUserSignUP()
     {
     	
-    	System.out.println(NewUserSignup.isDisplayed());
+    	assertTrue(NewUserSignup.isDisplayed());
     }
     
     
@@ -160,7 +162,7 @@ public class RegisterUserpage {
     
     public void AccountInfo()
     {
-    	System.out.println(accountInfoVisibility.isDisplayed());
+    	assertTrue(accountInfoVisibility.isDisplayed());
     }
     
     public void genderSelection()
@@ -250,7 +252,7 @@ public class RegisterUserpage {
     
     public void account_created()
     {
-  System.out.println(account_created.isDisplayed()+"account created is displayed or not");  	
+    	assertTrue(account_created.isDisplayed(),"account created is displayed or not");  	
     }
     
     
@@ -262,7 +264,7 @@ public class RegisterUserpage {
     
     public void logged_in_user() {
     	
-    System.out.println(Loggeed_in_as_user.isDisplayed()+"logged in as user");
+    	assertTrue(Loggeed_in_as_user.isDisplayed(),"logged in as user");
     }
     
     public void delete_account()
@@ -273,7 +275,7 @@ public class RegisterUserpage {
     public void account_deleted()
     {
     	
-    	System.out.println("account is deleted"+account_deleted.isDisplayed());
+    	assertTrue(account_deleted.isDisplayed(),"account is deleted");
     }
     
     public void contine_with_other_activity() {

@@ -134,10 +134,10 @@ public class RegisterUserpage {
     	signuplogin.click();
     }
     
-    public void NewUserSignUP()
+    public void NewUserSignUP(String text)
     {
     	
-    	assertTrue(NewUserSignup.isDisplayed());
+    	assertEquals(NewUserSignup.getText(),text);
     }
     
     

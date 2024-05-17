@@ -1,5 +1,6 @@
 package Scripts;
 
+
 import org.testng.annotations.Test;
 import generics.BaseClass;
 
@@ -19,7 +20,7 @@ public class RegisterUser extends BaseClass{
 
 		RegisterUserpage user = new RegisterUserpage(driver);
 		user.SIgnUPOrLoginButton();
-		user.NewUserSignUP();
+		user.NewUserSignUP("New User Signup!");
 		user.signUpName(name);
 		user.signUpEmail(email);
 		user.signUp();
@@ -63,9 +64,5 @@ public class RegisterUser extends BaseClass{
 	user.account_deleted();
 	user.contine_with_other_activity();
 	}
-
-
-
-
 
 }

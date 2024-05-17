@@ -8,9 +8,13 @@
 	
   <test  name="Login_test" group-by-instances="true" >
     <classes>
-      <class name="generics.Data_Class">
-		
-	  </class> 
+     
+<class name="Scripts.Sign_Up_With_Registered_User">
+	
+</class>
+
+
+      
     </classes>
   </test> <!-- Test -->
 	</suite> <!-- Suite -->

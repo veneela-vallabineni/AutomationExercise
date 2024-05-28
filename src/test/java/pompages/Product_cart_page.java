@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import net.bytebuddy.asm.MemberSubstitution.FieldValue;
+
 public class Product_cart_page {
 
 	@FindBy(xpath = "//li//a[@href = \"/products\"]")
@@ -21,6 +23,9 @@ public class Product_cart_page {
 	
 	@FindBy(xpath = "//u[contains(text() , 'View Cart')]")
 	private WebElement view_cart;
+	
+	@FindBy(xpath = "//tr[contains(@id , 'product')]")
+	private List<WebElement> products_list;
 	
 	
 	public Product_cart_page(WebDriver driver) {
@@ -50,6 +55,20 @@ public class Product_cart_page {
 	public void viewCart() {
 		view_cart.click();
 	}
+	
+	public ArrayList<Cart_items> verifyCartProducts() {
+		
+		ArrayList<Cart_items>  item_list = new ArrayList<Cart_items>();
+		for(WebElement cartitem : products_list) {
+			
+			item_list.add(new Cart_items(cartitem));
+			
+		}
+		return  item_list;
+	}
+	
+	
+	
 	
 	
 }

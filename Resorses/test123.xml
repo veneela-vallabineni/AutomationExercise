@@ -9,7 +9,7 @@
   <test  name="Login_test" group-by-instances="true" >
     <classes>
      
-<class name="Scripts.Sign_Up_With_Registered_User">
+<class name="Scripts.product_cart">
 	
 </class>
 

@@ -38,7 +38,7 @@ public class BaseClass {
 		
 		}
 		
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
 		driver.get("https://automationexercise.com");

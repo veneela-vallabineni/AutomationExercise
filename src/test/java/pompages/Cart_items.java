@@ -16,7 +16,7 @@ this.product_name = cart_items.findElement(By.xpath("td[@class = \"cart_descript
 this.price = cart_items.findElement(By.xpath("td[@class = \"cart_price\"]/p")).getText();
 this.quanity = cart_items.findElement(By.xpath("//tr[contains(@id , 'product')]/td[@class = \"cart_quantity\"]/button")).getText();
 this.total = cart_items.findElement(By.xpath("//tr[contains(@id , 'product')]/td[@class = \"cart_total\"]/p")).getText();
-this.remove_item_cart = cart_items.findElement(By.xpath("td[@class = \"cart_delete\"]"));
+this.remove_item_cart = cart_items.findElement(By.xpath("//td[@class = \"cart_delete\"]/a[@class = \"cart_quantity_delete\"]"));
 }
 
 

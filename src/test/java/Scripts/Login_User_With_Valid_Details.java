@@ -14,8 +14,8 @@ public class Login_User_With_Valid_Details extends BaseClass{
 public void enter_login_details() {
 		Login_User_with_Valid_details_page login_user = new Login_User_with_Valid_details_page(driver);
 	login_user.verify_login();
-	login_user.login_email("vinnu@gmail.com");
-	login_user.login_password("password");
+	login_user.login_email("somu@gmail.com1234567890");
+	login_user.login_password("1234");
 	login_user.login_button();
 	
 	}

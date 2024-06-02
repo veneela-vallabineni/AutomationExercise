@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
@@ -18,27 +19,30 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-	public static  WebDriver driver;
+	public static WebDriver driver;
 
 	@BeforeTest
-	@Parameters({"browser"})
-	public void openApplication(@Optional("chrome") String browser ) throws InterruptedException {
-		switch(browser.toLowerCase()) {
+	@Parameters({ "browser" })
+	public void openApplication(@Optional("chrome") String browser) throws InterruptedException {
+		switch (browser.toLowerCase()) {
 		case "chrome": {
-		WebDriverManager.chromedriver().setup();
-		driver =  new ChromeDriver(); 
-		break;
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--user-data-dir=C:\\Users\\vkris\\Selenium-Chrome");
+			chromeOptions.addArguments("--profile-directory=Profile 10");
+			
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver(chromeOptions);
+			break;
 		}
 		case "firefox": {
 			WebDriverManager.firefoxdriver().setup();
-			driver =  new FirefoxDriver(); 
+			driver = new FirefoxDriver();
 			break;
 		}
-		
-		
+
 		}
-		
-		driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 
 		driver.get("https://automationexercise.com");
@@ -50,15 +54,14 @@ public class BaseClass {
 		driver.close();
 
 	}
-	
-	public void getScreenShot(String filename)
-	{
-		System.out.println("file name" + filename );
+
+	public void getScreenShot(String filename) {
+		System.out.println("file name" + filename);
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File srcFile = ts.getScreenshotAs(OutputType.FILE);
 		System.out.println("Working Directory = " + System.getProperty("user.dir"));
-		File destFile = new File("./test-output/screenshot/"+filename);
-		System.out.println("does file exist or not"+filename+ destFile.exists());
+		File destFile = new File("./test-output/screenshot/" + filename);
+		System.out.println("does file exist or not" + filename + destFile.exists());
 		try {
 			Files.copy(srcFile, destFile);
 		} catch (IOException e) {

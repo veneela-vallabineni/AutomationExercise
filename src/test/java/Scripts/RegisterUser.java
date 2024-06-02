@@ -27,12 +27,14 @@ public class RegisterUser extends BaseClass{
 		user.AccountInfo();}
 
 	@Test(dependsOnMethods = "signUpUser" )
-	public void accountDetails()
+	public void accountDetails() throws InterruptedException
 	{RegisterUserpage user = new RegisterUserpage(driver);
 	
 	user.genderSelection();
 	user.enterPassword("name");
+	Thread.sleep(10000);
 	user.CalenderSelection();
+	Thread.sleep(10000);
 	user.sign_up_newslatter();
 	user.recive_special_offers();
 	user.address_info_first_name("email");

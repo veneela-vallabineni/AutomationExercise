@@ -1,11 +1,5 @@
 package pompages;
-
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.xpath.XPath;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,7 +42,6 @@ public class Search_product_Page {
 	public List<WebElement> Searched_Product_names() {
 		return Searched_Product_names;
 	}
-	
 	
 	
 }

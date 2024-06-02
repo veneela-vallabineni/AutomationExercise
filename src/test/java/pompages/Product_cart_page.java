@@ -8,12 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import net.bytebuddy.asm.MemberSubstitution.FieldValue;
 
 public class Product_cart_page {
 
 	@FindBy(xpath = "//li//a[@href = \"/products\"]")
 	private WebElement product;
+	
+	@FindBy(xpath = "//a[@href = \"/view_cart\"]")
+	private WebElement cart_button;
 	
 	@FindBy( xpath = "//div[contains(@class,'productinfo')]")
 	private List<WebElement>  products;
@@ -37,6 +39,9 @@ public class Product_cart_page {
 		product.click(); 
 	}
 	
+	public void cartButton() {
+		cart_button.click();
+	}
 
 	
 	public ArrayList<Product> get_first_two_products() {
@@ -47,6 +52,18 @@ public class Product_cart_page {
 		
 		return productList;
 	}
+	
+	public ArrayList<Product> get_products() {
+		ArrayList<Product> productList = new ArrayList<Product>();
+  		for(WebElement productElem : products.subList(0, 2)) {
+			productList.add(new Product(productElem));
+		}
+		
+		return productList;
+	}
+	
+	
+	
 	
 	public void continueShoping() {
 		Continue_shoping.click();
